@@ -1,4 +1,4 @@
-# Proximity
+# PingPong
 
 This repository contains a simple implementation of an offline chatroom.
 
@@ -7,7 +7,7 @@ This repository contains a simple implementation of an offline chatroom.
 ## Usage:
 
 -   
-    ``` git clone https://github.com/sakshi2912/Proximity.git ```
+    ``` git clone https://github.com/Pratibha009/PingPong ```
 
 - To start the server
   
