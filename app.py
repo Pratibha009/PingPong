@@ -5,7 +5,21 @@ from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit, join_room, leave_room
 
 
-app = Flask(__name__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+NESTED_DIR = os.path.join(BASE_DIR, "proximityy")
+
+template_folder = "templates"
+static_folder = "static"
+
+if not os.path.exists(os.path.join(BASE_DIR, template_folder, "index.html")):
+    nested_template = os.path.join(NESTED_DIR, "templates")
+    nested_static = os.path.join(NESTED_DIR, "static")
+    if os.path.exists(os.path.join(nested_template, "index.html")):
+        template_folder = nested_template
+        static_folder = nested_static
+
+
+app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "proximity-dev-secret")
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 
