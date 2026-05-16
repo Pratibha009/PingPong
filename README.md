@@ -1,13 +1,55 @@
-# PingPong
+# Proximity
 
 This repository contains a simple implementation of an offline chatroom.
+
+## Web app
+
+This project now includes a browser-based realtime chat app that can be deployed and shared with a public link.
+
+### Run locally
+
+```bash
+cd proximityy
+pip install -r requirements.txt
+python app.py
+```
+
+Open:
+
+```text
+http://localhost:5000
+```
+
+Create a room, copy the share link, and send it to other users.
+
+### Deploy on Render
+
+1. Push this folder to GitHub.
+2. Go to Render and create a new **Web Service** from your GitHub repository.
+3. Set the root directory to:
+
+```text
+proximityy
+```
+
+4. Use these commands:
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+gunicorn --worker-class gthread --threads 100 app:app
+```
+
+Render will generate a public URL. Open that URL, create a room, and use **Copy Share Link**.
 
 
 
 ## Usage:
 
 -   
-    ``` git clone https://github.com/Pratibha009/PingPong ```
+    ``` git clone https://github.com/sakshi2912/Proximity.git ```
 
 - To start the server
   
